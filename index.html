@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Hogar Social de Berisso</title>
+  <meta name="description" content="Más de 80 años de identidad, deporte y comunidad en un solo lugar. Sumate al Club Hogar Social de Berisso." />
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos única -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <div class="cartelera" id="cartelera" role="marquee" aria-label="Cartelera de avisos del club">
+    <div class="cartelera__track">
+      <div class="cartelera__inner">
+        <!-- Avisos duplicados para efecto loop infinito -->
+        <span class="cartelera__item cartelera__item--urgente">📢 Próximo fin de semana: Pollo a la Parrilla a Beneficio del Club. ¡Reservá tu lugar!<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">🏊 Turno de evaluación técnica natación — Abierta la inscripción. Consultá por WhatsApp.<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">🏀 Femenino campeón Copa Ciudad de Berisso — ¡Felicitaciones a todo el plantel!<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">📅 Recordatorio: El pago de cuotas puede consultarse directamente por WhatsApp a Secretaría.<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">🌧️ Ante suspensiones por lluvia, seguí nuestras redes: @hogarsocialberisso<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <!-- Duplicados para loop continuo -->
+        <span class="cartelera__item cartelera__item--urgente">📢 Próximo fin de semana: Pollo a la Parrilla a Beneficio del Club. ¡Reservá tu lugar!<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">🏊 Turno de evaluación técnica natación — Abierta la inscripción. Consultá por WhatsApp.<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">🏀 Femenino campeón Copa Ciudad de Berisso — ¡Felicitaciones a todo el plantel!<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">📅 Recordatorio: El pago de cuotas puede consultarse directamente por WhatsApp a Secretaría.<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+        <span class="cartelera__item">🌧️ Ante suspensiones por lluvia, seguí nuestras redes: @hogarsocialberisso<span class="cartelera__separator" aria-hidden="true">◆</span></span>
+      </div>
+    </div>
+    <button class="cartelera__close" id="cartelera-close" aria-label="Cerrar cartelera" title="Cerrar avisos">✕</button>
+  </div>
+
+
+  <header class="header" id="main-header" role="banner">
+    <div class="header__inner">
+      <a href="#inicio" class="header__logo" aria-label="Hogar Social de Berisso — Inicio">
+        <img
+          src="assets/hogar-crece.png"
+          alt="Escudo oficial del Club Hogar Social de Berisso"
+          class="header__logo-img header__logo-img--crece"
+          id="header-logo-img"
+          loading="eager"
+        />
+        <div class="header__logo-text">
+          <span class="header__logo-name">Hogar Social</span>
+          <span class="header__logo-sub">Berisso · Desde 1943</span>
+        </div>
+      </a>
+
+      <!-- Nav Desktop -->
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__nav-list">
+          <li><a href="#inicio" class="header__nav-link">Inicio</a></li>
+          <li><a href="#socios" class="header__nav-link">Socios</a></li>
+          <li><a href="#disciplinas" class="header__nav-link">Disciplinas</a></li>
+          <li><a href="#comunidad" class="header__nav-link">Comunidad</a></li>
+          <li><a href="#contacto" class="header__nav-link header__cta">Asociate</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburguesa Mobile -->
+      <button class="header__hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="header__hamburger-bar"></span>
+        <span class="header__hamburger-bar"></span>
+        <span class="header__hamburger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menú Mobile -->
+  <div id="mobile-menu" class="header__mobile-menu" role="dialog" aria-label="Menú móvil" style="display: none;">
+    <ul class="header__mobile-nav-list">
+      <li><a href="#inicio" class="header__mobile-nav-link">Inicio</a></li>
+      <li><a href="#socios" class="header__mobile-nav-link">Socios</a></li>
+      <li><a href="#disciplinas" class="header__mobile-nav-link">Disciplinas</a></li>
+      <li><a href="#comunidad" class="header__mobile-nav-link">Comunidad</a></li>
+    </ul>
+    <a href="#contacto" class="header__mobile-cta">Asociate al Club</a>
+  </div>
+
+
+  <main class="macro-layout">
+
+    <!-- ── Sección 1: Hero ── -->
+    <section id="inicio" class="hero" aria-label="Sección principal del club">
+      <div class="hero__bg-logo" aria-hidden="true">
+        <img src="assets/escudo.png" alt="" loading="eager" fetchpriority="high" />
+      </div>
+      <div class="hero__content">
+        <div class="hero__badge">Fundado en 1943 · Berisso, Buenos Aires</div>
+        <h1 class="hero__title">
+          Hogar Social de Berisso: <span class="hero__title--highlight">Más de 80 años</span> de identidad, deporte y comunidad en un solo lugar
+        </h1>
+        <p class="hero__subtitle">
+          Sumate a nuestro natatorio único climatizado o unite a la mística deportiva del <strong>Hogar</strong>. Formá parte del club que late en el corazón histórico de Berisso.
+        </p>
+        <button id="hero-cta-principal" class="hero__btn-primary" aria-label="Ir a la sección de inscripción para asociarse al club">
+          Asociate Hoy
+        </button>
+        <div class="hero__stats" aria-label="Datos del club">
+          <div class="hero__stat">
+            <span class="hero__stat-number">+80</span>
+            <span class="hero__stat-label">Años de historia</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">10</span>
+            <span class="hero__stat-label">Disciplinas</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">Único</span>
+            <span class="hero__stat-label">Natatorio climatizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sección 2: Portal del Socio ── -->
+    <section id="socios" class="portal" aria-label="Portal del Socio — Autogestión" style="background-image: url('assets/entrada.jpg');">
+      <div class="portal__overlay"></div>
+      <div class="container portal__content">
+        <div class="portal__header">
+          <div class="badge badge--accent" style="margin: 0 auto 1rem;">Portal del Socio</div>
+          <h2 class="portal__title">Tu autogestión, sin complicaciones</h2>
+          <p class="portal__subtitle">Gestioná tus consultas directamente con Secretaría vía WhatsApp.</p>
+        </div>
+        <div class="portal__cards">
+          <article class="portal-card portal-card--cuotas" aria-label="Consulta de cuota">
+            <div class="carnet">
+              <div class="carnet__header">
+                <img src="assets/escudo.png" alt="Escudo Hogar Social" class="carnet__escudo" />
+                <div class="carnet__club-info">
+                  <span class="carnet__club-name">HOGAR SOCIAL</span>
+                  <span class="carnet__club-sub">Berisso · Desde 1943</span>
+                </div>
+                <span class="carnet__tipo">SOCIO</span>
+              </div>
+              <div class="carnet__body">
+                <div class="carnet__field">
+                  <label for="portal-nombre" class="carnet__field-label">Nombre</label>
+                  <input id="portal-nombre" type="text" class="carnet__input" placeholder="Tu nombre completo" autocomplete="name" />
+                </div>
+                <div class="carnet__field">
+                  <label for="portal-dni" class="carnet__field-label">DNI</label>
+                  <input id="portal-dni" type="number" class="carnet__input" placeholder="N.º de documento" inputmode="numeric" />
+                </div>
+              </div>
+              <div class="carnet__stripe"></div>
+            </div>
+            <button id="portal-btn-cuota" class="portal-card__btn" aria-label="Consultar estado de cuota por WhatsApp">
+              Consultar Estado de Cuota
+            </button>
+            <p class="portal-card__hint">Solo para socios activos · Responde Secretaría</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sección 3: Disciplinas (Usa Container Queries) ── -->
+    <section id="disciplinas" class="hub" aria-label="Hub de disciplinas deportivas">
+      <div class="container">
+        <div class="hub__header">
+          <div class="badge badge--primary" style="margin: 0 auto 1rem;">Nuestras Disciplinas</div>
+          <h2 class="section-title">Todo el deporte del club, en un solo lugar</h2>
+          <p class="section-subtitle">
+            Pasá el cursor sobre cada disciplina para ver más información y contactarnos directamente.
+          </p>
+        </div>
+
+        <div class="hub__grid" id="disciplinas-grid">
+
+          <!-- ── 1. BÁSQUETBOL — DESTACADA inicial ── -->
+          <article class="disc-img-card disc-img-card--featured" data-id="basquetbol" aria-label="Disciplina: Básquetbol">
+            <img src="assets/basquet/basquet.png" alt="Básquetbol en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Básquetbol</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Básquetbol</p>
+              <p class="disc-img-card__overlay-desc">Participación histórica en APB. Categorías masculinas y femeninas desde pre-mini hasta Primera División. ¡Vení a picar la pelota con nosotros!</p>
+              <button class="disc-img-card__wa-btn" data-disc="Básquetbol">Consultar por WhatsApp</button>
+            </div>
+            <div class="disc-img-card__timer-bar" aria-hidden="true"></div>
+          </article>
+
+          <!-- ── 2. NATACIÓN ── -->
+          <article class="disc-img-card" data-id="natacion" aria-label="Disciplina: Natación">
+            <img src="assets/natacion/natacion.png" alt="Natación en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Natación</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Natación</p>
+              <p class="disc-img-card__overlay-desc">Natatorio climatizado Oscar Pagano — agua salada único en la región. Clases para todas las edades y niveles.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Natación">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 3. PATÍN ARTÍSTICO ── -->
+          <article class="disc-img-card" data-id="patin" aria-label="Disciplina: Patín Artístico">
+            <img src="assets/patin/patin.png" alt="Patín Artístico en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Patín Artístico</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Patín Artístico</p>
+              <p class="disc-img-card__overlay-desc">Elegancia sobre ruedas. Disciplina que combina arte y deporte. Grupos formativos con participación en competencias provinciales.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Patín Artístico">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 4. TAEKWONDO ── -->
+          <article class="disc-img-card" data-id="taekwondo" aria-label="Disciplina: Taekwondo">
+            <img src="assets/taekwondo/taekwondo.png" alt="Taekwondo en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Taekwondo</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Taekwondo</p>
+              <p class="disc-img-card__overlay-desc">Arte marcial coreano que forja carácter, disciplina y respeto. Grupos desde niños hasta adultos. Competencias federadas.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Taekwondo">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 5. TELA ACROBÁTICA ── -->
+          <article class="disc-img-card" data-id="tela" aria-label="Disciplina: Tela Acrobática">
+            <img src="assets/telas/telas.png" alt="Tela Acrobática en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Tela Acrobática</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Tela Acrobática</p>
+              <p class="disc-img-card__overlay-desc">Arte aéreo en tela. Desarrollo de fuerza, flexibilidad y coordinación en un ambiente seguro y creativo para niños, jóvenes y adultos.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Tela Acrobática">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 6. PILATES ── -->
+          <article class="disc-img-card" data-id="pilates" aria-label="Disciplina: Pilates">
+            <img src="assets/pilates/pilates.png" alt="Pilates en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Pilates</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Pilates</p>
+              <p class="disc-img-card__overlay-desc">Método de acondicionamiento físico integral. Mejora la postura, flexibilidad y fuerza. Grupos reducidos para atención personalizada.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Pilates">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 7. FÚTBOL ── -->
+          <article class="disc-img-card" data-id="futbol" aria-label="Disciplina: Fútbol">
+            <img src="assets/escudo.png" alt="Fútbol en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" style="object-fit: contain; padding: 1rem; background: #1a1a1a;" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Fútbol </p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Fútbol</p>
+              <p class="disc-img-card__overlay-desc">Sumate a nuestros equipos. Formación desde categorías infantiles hasta primera división, con foco en el compañerismo y desarrollo técnico.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Fútbol">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 8. GIMNASIO ── -->
+          <article class="disc-img-card" data-id="gimnasio" aria-label="Disciplina: Gimnasio">
+            <img src="assets/escudo.png" alt="Gimnasio en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" style="object-fit: contain; padding: 1rem; background: #1a1a1a;" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Gimnasio</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Gimnasio</p>
+              <p class="disc-img-card__overlay-desc">Espacio de musculación y acondicionamiento físico general. Rutinas personalizadas orientadas a la salud, el alto rendimiento o el mantenimiento.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Gimnasio">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 9. YOGA ── -->
+          <article class="disc-img-card" data-id="yoga" aria-label="Disciplina: Yoga">
+            <img src="assets/escudo.png" alt="Yoga en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" style="object-fit: contain; padding: 1rem; background: #1a1a1a;" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Yoga</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Yoga</p>
+              <p class="disc-img-card__overlay-desc">Clases enfocadas en el bienestar integral. Trabajo de respiración, posturas y meditación para reducir el estrés y mejorar la calidad de vida.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Yoga">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <!-- ── 10. STRETCHING ── -->
+          <article class="disc-img-card" data-id="stretching" aria-label="Disciplina: Stretching">
+            <img src="assets/escudo.png" alt="Stretching en Hogar Social de Berisso" class="disc-img-card__img" loading="lazy" style="object-fit: contain; padding: 1rem; background: #1a1a1a;" />
+            <div class="disc-img-card__label"><p class="disc-img-card__nombre">Stretching</p></div>
+            <div class="disc-img-card__overlay" aria-hidden="true">
+              <p class="disc-img-card__overlay-nombre">Stretching</p>
+              <p class="disc-img-card__overlay-desc">Clases de estiramiento y flexibilidad. Ideal para prevenir lesiones, mejorar la postura y complementar otras actividades deportivas.</p>
+              <button class="disc-img-card__wa-btn" data-disc="Stretching">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sección 4: Nuestra Historia / Legado ── -->
+    <section id="comunidad" class="legado" aria-label="Historia y legado del club">
+      <div class="container">
+        <div class="legado__header">
+          <div class="badge badge--accent" style="margin: 0 auto 1rem;">Nuestro Legado</div>
+          <h2 class="section-title legado__title">Más de 80 años construyendo comunidad</h2>
+          <p class="section-subtitle legado__sub">
+            Desde la calle Nueva York hasta el natatorio Oscar Pagano: la historia del Hogar Social es la historia misma de Berisso.
+          </p>
+        </div>
+        <div class="legado__timeline" aria-label="Historia del club">
+          <article class="legado__timeline-item">
+            <div class="legado__timeline-dot" style="border-color: #fff;" aria-hidden="true"></div>
+            <p class="legado__timeline-year" style="color: #fff;">1943</p>
+            <h3 class="legado__timeline-title">Fundación y Compromiso Social</h3>
+            <p class="legado__timeline-desc">El 21 de noviembre de 1943 nace el Club Hogar Social en el corazón de la histórica calle Nueva York, con el respaldo directo de Juan Domingo Perón. En sus primeros años funciona como un centro de asistencia y previsión para las miles de familias obreras de los frigoríficos, ofreciendo escuela primaria, guardería infantil, talleres de costura y consultorios médicos gratuitos.</p>
+          </article>
+          <article class="legado__timeline-item">
+            <div class="legado__timeline-dot" style="border-color: #fff;" aria-hidden="true"></div>
+            <p class="legado__timeline-year" style="color: #fff;">1955</p>
+            <h3 class="legado__timeline-title">Clausura e Intervención Militar</h3>
+            <p class="legado__timeline-desc">Tras el derrocamiento del gobierno constitucional, la dictadura militar clausura la institución por su fuerte identidad peronista. El edificio es militarizado y usado como cuartel del Ejército Argentino.</p>
+          </article>
+          <article class="legado__timeline-item">
+            <div class="legado__timeline-dot" style="border-color: #fff;" aria-hidden="true"></div>
+            <p class="legado__timeline-year" style="color: #fff;">Fines 50s</p>
+            <h3 class="legado__timeline-title">El Rescate y la Piscina Olímpica</h3>
+            <p class="legado__timeline-desc">La determinación de un grupo organizado de socios logra recuperar el club. Bajo el liderazgo del expresidente Juan Regueira, se construye la mítica piscina olímpica de agua salada, convirtiéndose en el gran polo de atracción estival para toda la región.</p>
+          </article>
+          <article class="legado__timeline-item">
+            <div class="legado__timeline-dot" style="border-color: #fff;" aria-hidden="true"></div>
+            <p class="legado__timeline-year" style="color: #fff;">2017</p>
+            <h3 class="legado__timeline-title">Renovación Estructural</h3>
+            <p class="legado__timeline-desc">Se detectan fallas críticas en el natatorio climatizado. Con rapidez y esfuerzo colectivo, se encara una reforma estructural integral para reconstruir la cubierta, salvaguardando la seguridad de los usuarios.</p>
+          </article>
+          <article class="legado__timeline-item">
+            <div class="legado__timeline-dot" style="border-color: #fff;" aria-hidden="true"></div>
+            <p class="legado__timeline-year" style="color: #fff;">Nov. 2025</p>
+            <h3 class="legado__timeline-title">Legado Eterno de Oscar Pagano</h3>
+            <p class="legado__timeline-desc">En un emotivo homenaje, el club oficializa la imposición del nombre "Oscar Pagano" a su natatorio climatizado, inmortalizando el legado del entrañable guardavidas que dedicó más de 40 años a la enseñanza.</p>
+          </article>
+          <article class="legado__timeline-item">
+            <div class="legado__timeline-dot" style="border-color: #fff;" aria-hidden="true"></div>
+            <p class="legado__timeline-year" style="color: #fff;">Mar. 2026</p>
+            <h3 class="legado__timeline-title">Doble Gesta y Gloria Deportiva</h3>
+            <p class="legado__timeline-desc">El básquetbol hace historia: el plantel masculino se corona campeón local de la APB, mientras que el equipo femenino alza la copa y logra una histórica clasificación al Torneo Provincial Femenino.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Sección 5: Contacto / Formulario de Captación ── -->
+    <section id="contacto" class="captacion" aria-label="Formulario de inscripción al club">
+      <div class="container">
+        <div class="captacion__inner">
+          <div class="captacion__info">
+            <div class="captacion__tag">¿Querés asociarte?</div>
+            <h2 class="captacion__titulo">Empezá tu historia en Hogar Social</h2>
+            <p class="captacion__intro">
+              Completá los campos de la derecha y se abrirá WhatsApp con tu consulta ya redactada. Secretaría te responderá a la brevedad.
+            </p>
+            <div class="captacion__garantias">
+              <div class="captacion__garantia">
+                <span class="captacion__garantia-titulo">Solo se usa en WhatsApp</span>
+                <span class="captacion__garantia-desc">Tus datos viajan únicamente como mensaje de WhatsApp a Secretaría. No se guardan en ningún servidor ni base de datos.</span>
+              </div>
+              <div class="captacion__garantia">
+                <span class="captacion__garantia-titulo">¿Por qué la fecha de nacimiento?</span>
+                <span class="captacion__garantia-desc">Es necesaria para asignarte la categoría correspondiente (APB, formativas, adultos, etc.) desde el primer contacto.</span>
+              </div>
+              <div class="captacion__garantia">
+                <span class="captacion__garantia-titulo">¿No tenés WhatsApp?</span>
+                <span class="captacion__garantia-desc">Llamanos al +54 221 464-3085 o escribinos a hogarsocial@yahoo.com.ar</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="captacion__form-wrapper">
+            <form id="formulario-captacion" class="captacion__form" novalidate aria-label="Formulario de inscripción">
+              <p class="form-wa-aviso">Estos datos se envían únicamente como mensaje de WhatsApp. No se almacena ninguna información.</p>
+
+              <div class="form-group">
+                <label for="form-nombre" class="form-label">Nombre y Apellido</label>
+                <input id="form-nombre" name="nombre" type="text" class="form-input" placeholder="Ej: María González" autocomplete="name" required />
+                <span class="form-error-msg" id="error-nombre" role="alert" style="display: none;"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-nacimiento" class="form-label">Fecha de Nacimiento</label>
+                  <input id="form-nacimiento" name="nacimiento" type="date" class="form-input" required />
+                  <span class="form-error-msg" id="error-nacimiento" role="alert" style="display: none;"></span>
+                </div>
+                <div class="form-group">
+                  <label for="form-telefono" class="form-label">Teléfono / WhatsApp</label>
+                  <input id="form-telefono" name="telefono" type="tel" class="form-input" placeholder="Ej: 221 555-1234" autocomplete="tel" inputmode="tel" required />
+                  <span class="form-error-msg" id="error-telefono" role="alert" style="display: none;"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="form-disciplina" class="form-label">Disciplina de Interés</label>
+                <select id="form-disciplina" name="disciplina" class="form-select" required>
+                  <option value="" disabled selected>Seleccioná una disciplina</option>
+                  <option value="Fútbol">Fútbol</option>
+                  <option value="Básquetbol">Básquetbol</option>
+                  <option value="Natación">Natación</option>
+                  <option value="Patín Artístico">Patín Artístico</option>
+                  <option value="Taekwondo">Taekwondo</option>
+                  <option value="Tela Acrobática">Tela Acrobática</option>
+                  <option value="Gimnasio">Gimnasio</option>
+                  <option value="Pilates">Pilates</option>
+                  <option value="Yoga">Yoga</option>
+                  <option value="Stretching">Stretching</option>
+                  <option value="Instructorado de Guardavidas">Instructorado de Guardavidas</option>
+                  <option value="Socio General (sin disciplina)">Socio General</option>
+                </select>
+                <span class="form-error-msg" id="error-disciplina" role="alert" style="display: none;"></span>
+              </div>
+
+              <button type="submit" class="form-submit" aria-label="Abrir WhatsApp con la consulta de inscripción">
+                Abrir WhatsApp con mi consulta
+              </button>
+            </form>
+
+            <!-- Mensaje de éxito -->
+            <div id="form-success" class="form-success" role="alert" aria-live="polite" style="display: none;">
+              <div class="form-success__check" aria-hidden="true">✓</div>
+              <h3 class="form-success__title">WhatsApp abierto</h3>
+              <p class="form-success__desc">Tu consulta fue preparada. Secretaría te responderá en horario de atención.</p>
+              <button id="form-reset-btn" class="form-success__reset">Enviar otra consulta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ╔══════════════════════════════════════╗
+       ║  PIE DE PÁGINA COMPLETO              ║
+       ╚══════════════════════════════════════╝ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Col 1 — Marca -->
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="assets/escudo.png" alt="Escudo del Club Hogar Social de Berisso" class="footer__logo-img" loading="lazy" />
+            <div class="footer__logo-text">
+              <span class="footer__logo-name">Hogar Social de Berisso</span>
+              <span class="footer__logo-sub">Fundado en 1943 · CP 1923</span>
+            </div>
+          </div>
+          <p class="footer__brand-desc">
+            Más de 80 años de deporte, comunidad y compromiso social en el corazón histórico de Berisso.
+          </p>
+          <div class="footer__rrss" aria-label="Redes sociales del club">
+            <a href="https://www.facebook.com/HogarSocialBerisso" class="footer__rrss-btn" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/hogarsocialberisso" class="footer__rrss-btn" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 — Contacto -->
+        <div class="footer__contacto">
+          <h3 class="footer__col-title">Contacto</h3>
+          <ul class="footer__contacto-list">
+            <li class="footer__contacto-item">
+              <span class="footer__contacto-label">Secretaría</span>
+              <span class="footer__contacto-value">Av. Montevideo y Calle 3, Berisso</span>
+            </li>
+            <li class="footer__contacto-item">
+              <span class="footer__contacto-label">Instalaciones</span>
+              <span class="footer__contacto-value">Calle Nueva York y Valparaíso, Berisso</span>
+            </li>
+            <li class="footer__contacto-item">
+              <span class="footer__contacto-label">Teléfono</span>
+              <span class="footer__contacto-value"><a href="tel:+542214643085">+54 221 464-3085</a></span>
+            </li>
+            <li class="footer__contacto-item">
+              <span class="footer__contacto-label">WhatsApp</span>
+              <span class="footer__contacto-value"><a href="https://wa.me/5492215651151" target="_blank" rel="noopener noreferrer">221 565-1151</a></span>
+            </li>
+            <li class="footer__contacto-item">
+              <span class="footer__contacto-label">Correo</span>
+              <span class="footer__contacto-value"><a href="mailto:hogarsocial@yahoo.com.ar">hogarsocial@yahoo.com.ar</a></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Navegación -->
+        <nav class="footer__nav" aria-label="Navegación del pie de página">
+          <h3 class="footer__col-title">Navegación</h3>
+          <ul class="footer__nav-list">
+            <li><a href="#inicio" class="footer__nav-link">Inicio</a></li>
+            <li><a href="#socios" class="footer__nav-link">Portal del Socio</a></li>
+            <li><a href="#disciplinas" class="footer__nav-link">Disciplinas</a></li>
+            <li><a href="#comunidad" class="footer__nav-link">Nuestra Historia</a></li>
+            <li><a href="#contacto" class="footer__nav-link">Asociate</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- Barra inferior -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2026 Club Hogar Social de Berisso · Todos los derechos reservados</p>
+        <p class="footer__privacy">Los datos ingresados en este sitio se envían únicamente como mensaje de WhatsApp y no se almacenan en ningún servidor.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
